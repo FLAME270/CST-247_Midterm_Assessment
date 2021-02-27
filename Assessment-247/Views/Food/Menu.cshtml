@@ -1,0 +1,42 @@
+﻿@model Assessment_247.Models.foodModel
+
+<h4>foodModel</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Menu">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Calories" class="control-label"></label>
+                <input asp-for="Calories" class="form-control" />
+                <span asp-validation-for="Calories" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IngredientOne" class="control-label"></label>
+                <input asp-for="IngredientOne" class="form-control" />
+                <span asp-validation-for="IngredientOne" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IngredientTwo" class="control-label"></label>
+                <input asp-for="IngredientTwo" class="form-control" />
+                <span asp-validation-for="IngredientTwo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Menu" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    @ViewBag.ShowFoodReverse
+    <br />
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
